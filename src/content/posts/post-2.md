@@ -1,7 +1,7 @@
 ---
-title: 'My First Blog Post'
-pubDate: 2024-09-13
-description: 'This page is made automatically from a markdown file :)'
+title: 'My Second Blog Post'
+pubDate: 2024-09-15
+description: "It's like the first one, but the second one"
 tags: ["astro"]
 ---
 
