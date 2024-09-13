@@ -1,0 +1,75 @@
+---
+
+---
+
+<style>
+  .webring {
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .webring a {
+    display: block;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .webring a:link,
+  .webring a:visited {
+    color: rgba(var(--accent));
+  }
+
+  .webring a:hover,
+  .webring a:focus {
+    color: rgba(var(--accent-light));
+  }
+
+  .expanded {
+    display: unset;
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+  }
+
+  .icon > img {
+    width: 2em;
+    height: 2em;
+  }
+</style>
+<footer>
+  <div class="webrings">
+    <div class="webring">
+      <a
+        class="webring-prev"
+        style="color:#5075BF"
+        href="https://nixwebr.ing/prev/partywumpus">&lt;-</a
+      >
+      <hr />
+      <a class="webring-link" style="color:#7EB6E1" href="https://nixwebr.ing"
+        >nix webring</a
+      >
+      <hr />
+      <a
+        class="webring-random"
+        style="color:#5075BF"
+        href="https://nixwebr.ing/rand">random</a
+      >
+      <hr />
+      <a
+        class="webring-next"
+        style="color:#5075BF"
+        href="https://nixwebr.ing/next/partywumpus">-&gt;</a
+      >
+    </div>
+  </div>
+</footer>
