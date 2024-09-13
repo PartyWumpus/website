@@ -1,0 +1,48 @@
+---
+import { type InferEntrySchema } from "astro:content";
+import Layout from "./Layout.astro";
+
+interface Props {
+  data: InferEntrySchema<"posts">;
+}
+
+const { data } = Astro.props;
+---
+
+<Layout title={data.title}>
+  <div class="blog-post">
+    <h1>{data.title}</h1>
+    <p class="metadata">
+      {data.description} &nbsp;&nbsp; Published: {
+        data.pubDate.toString().slice(0, 10)
+      }
+    </p>
+    <div class="post-text">
+      <slot />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .blog-post h1 {
+    margin-bottom: 0em;
+  }
+
+  .blog-post p {
+    margin-top: 0.3em;
+  }
+
+  .metadata {
+    font-size: 0.9em;
+    color: rgb(200, 200, 200);
+  }
+
+  .post-text :global(p) {
+    margin-bottom: 0.15em;
+    margin-top: 0em;
+  }
+
+  .post-text :global(.astro-code) {
+    padding: 0.5em;
+  }
+</style>

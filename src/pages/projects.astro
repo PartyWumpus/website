@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card, { type Props } from "../components/ProjectCard.astro";
+const inProgress: Props[] = [
+  {
+    href: "https://github.com/PartyWumpus/advent-of-code",
+    title: "Advent of Code",
+    body: "My advent of code attempts",
+    tags: ["rust", "python"],
+  },
+  {
+    href: "https://github.com/PartyWumpus/dotfiles",
+    title: "Nixos config",
+    body: "My (bad) nixos config, please don't send me hatemail :)",
+  },
+  {
+    href: "https://github.com/SteamDeckHomebrew/decky-loader",
+    title: "Decky Loader",
+    body: "A plugin loader for the steam deck (as a maintainer/contributor)",
+    tags: ["python", "typescript"],
+  },
+];
+const done: Props[] = [
+  {
+    href: "https://github.com/PartyWumpus/befreak-interpreter",
+    title: "An interactive befreak interpreter",
+    body: "An interactive GUI interpreter for a 2D toy language from 2003",
+    tags: ["rust", "egui"],
+    date: "June 2024",
+  },
+  {
+    href: "https://github.com/PartyWumpus/befreak-compiler",
+    title: "A befreak compiler",
+    body: "An LLVM frontend for a 2D toy language from 2003",
+    tags: ["rust", "llvm"],
+    date: "June 2024",
+  },
+  {
+    href: "https://github.com/PartyWumpus/EXA-doom",
+    title: "EXA Doom",
+    body: "A simple '3D' raycasting game built in Zachtronic's last call BBS",
+    date: "July 2022",
+    tags: ["javascript"],
+  },
+  {
+    href: "https://github.com/PartyWumpus?tab=repositories&q=&type=source",
+    title: "Various small projects",
+    body: "A handful of smaller projects can be seen on my github profile",
+  },
+];
+---
+
+<Layout title="hello this is my web site :)">
+  <h1>Current Projects</h1>
+  {
+    inProgress.map((post) => (
+      <Card
+        href={post.href}
+        title={post.title}
+        body={post.body}
+        tags={post.tags}
+        date={post.date}
+      />
+    ))
+  }
+  <h1>Finished Projects</h1>
+  {
+    done.map((post) => (
+      <Card
+        href={post.href}
+        title={post.title}
+        body={post.body}
+        tags={post.tags}
+        date={post.date}
+      />
+    ))
+  }
+</Layout>
