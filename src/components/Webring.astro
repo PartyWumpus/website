@@ -7,17 +7,24 @@
     margin: auto;
     width: fit-content;
     display: flex;
+    font-size: 0.6rem;
     flex-direction: row;
   }
 
   .webring a {
     display: block;
     text-align: center;
-    padding: 10px 10px;
+    padding: 5px 5px;
     text-decoration: none;
-    font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 550px) {
+    .webring a {
+      font-size: 0.8rem;
+      padding: 10px 10px;
+    }
   }
 
   .webring a:link,

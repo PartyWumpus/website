@@ -1,4 +1,9 @@
-## 🧞 Commands
+
+# My website
+its my website :)
+available on [partywump.us](https://partywump.us)
+
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 

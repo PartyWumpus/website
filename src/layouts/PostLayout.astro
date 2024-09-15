@@ -9,14 +9,25 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<Layout title={data.title}>
+<Layout>
   <div class="blog-post">
     <h1>{data.title}</h1>
-    <p class="metadata">
-      {data.description} &nbsp;&nbsp; Published: {
-        data.pubDate.toString().slice(0, 10)
+    <div class="metadata">
+      {
+        /*<span class="desc">
+          {data.description}
+        </span>
+        &nbsp;&nbsp;&nbsp;&nbsp;*/
       }
-    </p>
+      <span class="pub-date">
+        <time
+          datetime={data.pubDate.toISOString()}
+          title={data.pubDate.toString()}
+        >
+          {data.pubDate.toLocaleDateString()}
+        </time>
+      </span>
+    </div>
     <div class="post-text">
       <slot />
     </div>
@@ -25,17 +36,19 @@ const { data } = Astro.props;
 
 <style>
   .blog-post h1 {
-    margin-bottom: 0em;
+    margin-bottom: 0;
   }
 
-  .blog-post p {
-    margin-top: 0.3em;
+  .metadata p {
+    margin-top: 0;
   }
 
   .metadata {
-    font-size: 0.9em;
+    font-size: 0.85em;
     color: rgb(200, 200, 200);
   }
+
+  /* THEMING FOR THE POST */
 
   .post-text :global(p) {
     margin-bottom: 0.15em;

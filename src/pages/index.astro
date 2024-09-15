@@ -4,34 +4,32 @@ import Card from "../components/Card.astro";
 import Webrings from "../components/Webring.astro";
 ---
 
-<Layout title="hello this is my web site :)">
-  <main>
-    <div>
-      <h1>Welcome to <span class="text-gradient">partywump.us</span></h1>
-    </div>
-    <p class="intro">
-      I'm <strong>Party Wumpus</strong>, a UK-based developer.<br />
-      I primarily use typescript, rust and python. <br />
-      I use nixos, by the way ;)
-    </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="/projects"
-        title="Projects"
-        body="A list of the projects I've worked on."
-      />
-      <Card
-        href="/aboutme"
-        title="Accounts"
-        body="Places you can reach me if you want to get in touch."
-      />
-      <Card
-        href="/blog"
-        title="Blog"
-        body="Various blog posts about things I've worked on."
-      />
-    </ul>
-  </main>
+<Layout>
+  <div>
+    <h1>Welcome to <span class="text-gradient">partywump.us</span></h1>
+  </div>
+  <p class="intro">
+    I'm <strong>Party Wumpus</strong>, a UK-based developer.<br />
+    I primarily use typescript, rust and python. <br />
+    I use nixos, by the way ;)
+  </p>
+  <ul role="list" class="link-card-grid">
+    <Card
+      href="/projects"
+      title="Projects"
+      body="A list of the projects I've worked on."
+    />
+    <Card
+      href="/aboutme"
+      title="Accounts"
+      body="Places you can reach me if you want to get in touch."
+    />
+    <Card
+      href="/blog"
+      title="Blog"
+      body="Various blog posts about things I've worked on."
+    />
+  </ul>
   <Webrings />
 </Layout>
 
@@ -46,12 +44,27 @@ import Webrings from "../components/Webring.astro";
     z-index: -1;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 9vw;
+    margin-top: 0.5em;
     font-weight: 700;
     line-height: 1;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 0.8em;
   }
+
+  @media screen and (min-width: 680px) {
+    h1 {
+      font-size: 2rem;
+      white-space: nowrap;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
@@ -59,17 +72,19 @@ import Webrings from "../components/Webring.astro";
     background-size: 400%;
     background-position: 0%;
   }
+
   .intro {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     border: 1px solid rgba(var(--accent-light), 25%);
     background: linear-gradient(
       rgba(var(--accent-dark), 66%),
       rgba(var(--accent-dark), 33%)
     );
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 8px;
   }
+
   .intro code {
     font-size: 0.8em;
     font-weight: bold;
@@ -78,13 +93,20 @@ import Webrings from "../components/Webring.astro";
     border-radius: 4px;
     padding: 0.3em 0.4em;
   }
+
   .intro strong {
     color: rgb(var(--accent-light));
   }
+
   .link-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 0;
+  }
+
+  @media screen and (min-width: 400px) {
+    .link-card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    }
   }
 </style>
