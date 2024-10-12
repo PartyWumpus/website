@@ -13,7 +13,7 @@
         in
         {
           devShells.default = pkgs.mkShell {
-            buildInputs = with pkgs; [ 
+            buildInputs = with pkgs; [
               nodejs_22
               nodePackages."@astrojs/language-server"
             ];
