@@ -9,9 +9,8 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<Layout>
+<Layout title={data.title} description={data.description}>
   <div class="blog-post">
-    <h1>{data.title}</h1>
     <div class="metadata">
       {
         /*<span class="desc">
@@ -35,7 +34,7 @@ const { data } = Astro.props;
 </Layout>
 
 <style>
-  .blog-post h1 {
+  :global(.site-title) {
     margin-bottom: 0;
   }
 

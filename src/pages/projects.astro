@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card, { type Props } from "../components/ProjectCard.astro";
-const inProgress: Props[] = [
+import Card, {
+  type Props as ProjectProps,
+} from "../components/ProjectCard.astro";
+const inProgress: ProjectProps[] = [
   {
     href: "https://github.com/PartyWumpus/website",
     title: "Portfolio site",
@@ -33,7 +35,7 @@ const inProgress: Props[] = [
     tags: ["rust", "llvm"],
   },
 ];
-const done: Props[] = [
+const done: ProjectProps[] = [
   {
     href: "https://github.com/PartyWumpus/befreak-interpreter",
     title: "An interactive befreak interpreter",
@@ -63,29 +65,9 @@ const done: Props[] = [
 ];
 ---
 
-<Layout>
-  <h1>Current Projects</h1>
-  {
-    inProgress.map((post) => (
-      <Card
-        href={post.href}
-        title={post.title}
-        body={post.body}
-        tags={post.tags}
-        date={post.date}
-      />
-    ))
-  }
-  <h1>Finished Projects</h1>
-  {
-    done.map((post) => (
-      <Card
-        href={post.href}
-        title={post.title}
-        body={post.body}
-        tags={post.tags}
-        date={post.date}
-      />
-    ))
-  }
+<Layout title="Projects">
+  <h2>Current Projects</h2>
+  {inProgress.map((post) => <Card {...post} />)}
+  <h2>Finished Projects</h2>
+  {done.map((post) => <Card {...post} />)}
 </Layout>
