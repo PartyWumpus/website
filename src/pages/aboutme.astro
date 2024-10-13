@@ -1,8 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Icons from "../components/88by31-container.astro";
 ---
 
+<style>
+  .hidden {
+    color: white;
+    background: white;
+  }
+</style>
 <Layout title="About Me">
-  <h2>this page is under construction</h2>
-  <a href="https://github.com/PartyWumpus">my github account</a>
+  <p>
+    I'm Evie, a 18yr old trans girl from the UK. I like working in rust, and
+    tragically I have to use typescript and python often. I use nixos, my entire
+    system config can be viewed <a href="https://nix.partywump.us/">here</a>.
+    I'm a maintainer for Decky Loader (a plugin loader for steam) and am
+    currently employed at <span
+      class="hidden"
+      aria-hidden="true"
+      title="Don't really want to doxx myself so I'm not going to say"
+    >
+      nice try ;)
+    </span>
+    .
+  </p>
+  <h2>Contacting me</h2>
+  <ul>
+    <li>Github: <a href="https://github.com/PartyWumpus">PartyWumpus</a></li>
+    <li>Discord: partywampus</li>
+  </ul>
+  <Icons />
 </Layout>

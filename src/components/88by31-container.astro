@@ -1,0 +1,50 @@
+---
+import Icon, { type Props as IconProps } from "./88by31.astro";
+
+const icons: IconProps[] = [
+  {
+    src: "/88x31/88x31.gif",
+    alt: "88x31",
+    href: "https://cyber.dabamos.de/88x31",
+  },
+  { src: "/88x31/i-like-computer.png", alt: "I like computer" },
+  { src: "/88x31/transnow2.gif", alt: "Trans rights now!" },
+  {
+    src: "/88x31/made-with-neovim.gif",
+    alt: "Made with neovim",
+    href: "https://neovim.io/",
+  },
+  {
+    src: "/88x31/powered-by-nixos.png",
+    alt: "Powered by nixos",
+    href: "https://nixos.org/",
+  },
+  /* source: https://alyx.sh/posts/hrt-geocities-buttons/ */
+  { src: "/88x31/powered-by-e.gif", alt: "Powered by estrogen" },
+  {
+    src: "/88x31/github.gif",
+    alt: "Github",
+    href: "https://github.partywump.us/",
+  },
+  {
+    src: "/88x31/jellyfin.gif",
+    alt: "Jellyfin",
+    href: "https://jellyfin.org/",
+  },
+  { src: "/88x31/js-warning.gif", alt: "Warning: page contains JavaScript" },
+  { src: "/88x31/miku-approved.gif", alt: "This site is Miku approved" },
+  { src: "/88x31/netscape-now9.gif", alt: "Netscape 9.0 now" },
+];
+---
+
+<style>
+  .thing-container {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+  }
+</style>
+<div class="thing-container">
+  {icons.map((props) => <Icon {...props} />)}
+</div>
