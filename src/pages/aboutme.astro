@@ -5,8 +5,18 @@ import Icons from "../components/88by31-container.astro";
 
 <style>
   .hidden {
-    color: white;
+    color: transparent;
     background: white;
+  }
+
+  .hidden::selection {
+    color: transparent;
+    background-color: black;
+  }
+
+  .hidden::-moz-selection {
+    color: transparent;
+    background-color: black;
   }
 </style>
 <Layout title="About Me">
