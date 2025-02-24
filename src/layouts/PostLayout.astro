@@ -49,12 +49,31 @@ const { data } = Astro.props;
 
   /* THEMING FOR THE POST */
 
-  .post-text :global(p) {
-    margin-bottom: 0.15em;
-    margin-top: 0em;
+  :global(:not(.astro-code)) > :global(code) {
+    background-color: #24292e;
+    color: #e1e4e8;
+    padding: 0.1em 0.2em 0em 0.2em;
   }
 
-  .post-text :global(.astro-code) {
-    padding: 0.5em;
+  .post-text {
+    table {
+      border: 2px solid white;
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 1px solid white;
+      text-align: center;
+    }
+
+    .post-text p {
+      margin-bottom: 0.8em;
+      margin-top: 0em;
+    }
+
+    :global(.astro-code) {
+      padding: 0.5em;
+    }
   }
 </style>
