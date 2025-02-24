@@ -7,7 +7,7 @@ tags: ["c-to-befunge"]
 
 # Intro
 
-Befunge93 is a 2D, stack based, self overwriting, programming language.
+Befunge93 is a 2D, stack based, self overwriting programming language with single character instructions (like brainfuck).
 It has a handful of relevant operations:
 | Operator | Function |
 | -------- | ------- |
@@ -38,7 +38,7 @@ Programs exist in a 2D area called fungespace (infinite space with 0,0 at the to
 ```
 This program will:
 
-0. Turn to face right
+1. Turn to face right
 0. Push `2` onto the stack
 0. Push `3` onto the stack
 0. Pop the top two stack values and add them, pushing the result (`5`) onto the stack
