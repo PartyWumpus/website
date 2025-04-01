@@ -34,6 +34,14 @@ const icons: IconProps[] = [
   { src: "/88x31/js-warning.gif", alt: "Warning: page contains JavaScript" },
   { src: "/88x31/miku-approved.gif", alt: "This site is Miku approved" },
   { src: "/88x31/netscape-now9.gif", alt: "Netscape 9.0 now" },
+  { src: "/88x31/wii.gif", alt: "Wii" },
+  { src: "/88x31/old_monitor_button.gif", alt: "Old monitor approved" },
+  { src: "/88x31/zero-javascript.gif", alt: "Proudly ZERO javascript!" },
+  { src: "/88x31/made-on-linux.png", alt: "Made on gnu/linux" },
+  { src: "/88x31/poz.png", alt: "Powered by POZ", href: "https://poz.pet/" },
+  { src: "/88x31/css-is-awesome.webp", alt: "CSS is awesome" },
+  { src: "/88x31/nix-rules.gif", alt: "Nix rules", href: "https://github.com/NixOS/nix" },
+  { src: "/88x31/preserve.gif", alt: "Preserve", href:"https://archive.org/" },
 ];
 ---
 
@@ -44,6 +52,7 @@ const icons: IconProps[] = [
     background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
   }
+
 </style>
 <div class="thing-container">
   {icons.map((props) => <Icon {...props} />)}
