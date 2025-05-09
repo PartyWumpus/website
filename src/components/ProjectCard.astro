@@ -20,8 +20,8 @@ const { href, title, body, tags, date } = Astro.props;
       {body}
     </p>
     <p>
-      {tags ? `Written with: ${tags.join(", ")}.` : ""}
-      {date ? `Finished: ${date}` : ""}
+      <span>{tags ? `Tags: ${tags.join(", ")}.` : ""}</span>
+      <span class="date">{date ? `Finished: ${date}` : ""}</span>
     </p>
   </a>
 </li>
@@ -64,5 +64,8 @@ const { href, title, body, tags, date } = Astro.props;
   }
   .link-card:is(:hover, :focus-within) h2 {
     color: rgb(var(--accent-light));
+  }
+  .date {
+    float: right;
   }
 </style>

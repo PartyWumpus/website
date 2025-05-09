@@ -176,7 +176,7 @@ PRINT R03
 ```
 which is then just
 ```
-5 9 + 03p # 03p .
+5 9 + 03p # 03g .
 ```
 This uses three techniques in series:
 - Copy propagation (where you can replace `x = y; func(x)` with `x = y; func(y)`
@@ -191,7 +191,7 @@ To have a language that C could compile to, we'll need to be able to inline jump
 
 These are very simple, although implementing them is a little more tedious.
 
-Combine a nice inline if like `>#v_>` which either continues or goes down depending on the value at the top of the bstack combined with carefully placed arrows and there you go, jumping to labels!
+Combine a nice inline `if` like `>#v_>` (which either continues or goes down depending on the value at the top of the bstack when entered from the left) combined with carefully placed arrows and there you go, jumping to labels!
 
 (psuedocode)
 ```
