@@ -8,6 +8,13 @@ export interface Props {
 }
 
 const { href, title, body, tags, date } = Astro.props;
+const tagFiles = Object.keys(import.meta.glob("/public/tags/*"));
+const tagsIcons = Object.fromEntries(
+  tagFiles.map((tag) => [
+    tag.replace(/\.[^/.]+$/, "").replace("/public/tags/", ""),
+    tag.replace("/public", ""),
+  ]),
+);
 ---
 
 <li class="link-card" title={title}>
@@ -19,10 +26,29 @@ const { href, title, body, tags, date } = Astro.props;
     <p>
       {body}
     </p>
-    <p>
-      <span>{tags ? `Tags: ${tags.join(", ")}.` : ""}</span>
-      <span class="date">{date ? `Finished: ${date}` : ""}</span>
-    </p>
+    <div>
+        {
+          tags
+            ? tags.map((tag) => {
+                if (tagsIcons[tag] !== undefined) {
+                  return (
+                  <div
+                      class="tag"
+                      style=`background-image:url(${tagsIcons[tag]})`
+                      title={tag}
+                    >
+                    &nbsp;
+                    &nbsp;
+                  </div>
+                  );
+                } else {
+                  return <span class="tag">{tag}</span>;
+                }
+              })
+            : ""
+        }
+      <div class="date">{date ? `Finished: ${date}` : ""}</div>
+    </div>
   </a>
 </li>
 <style>
@@ -66,6 +92,24 @@ const { href, title, body, tags, date } = Astro.props;
     color: rgb(var(--accent-light));
   }
   .date {
+    display: inline-block;
     float: right;
+  }
+  .tag {
+    display: inline-block;
+    list-style: none;
+    padding: 0.1em 0.25em;
+    margin-right: 0.3em;
+    background-color: #282c34;
+    background-color: white;
+    color: black;
+    border-radius: 7px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: content-box;
+    background-position: center center;
+    vertical-align: middle;
   }
 </style>
