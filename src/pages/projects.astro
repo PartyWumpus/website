@@ -19,8 +19,8 @@ const inProgress: ProjectProps[] = [
   {
     href: "https://github.com/PartyWumpus/dotfiles",
     title: "Nixos config",
-    body: "My (bad) nixos config, please don't send me hatemail :)",
-    tags: ["nix"],
+    body: "My nixos config. Includes a bar written with AGS and a neovim config written with NixCats",
+    tags: ["nix", "typescript", "lua"],
   },
   {
     href: "https://github.com/SteamDeckHomebrew/decky-loader",
@@ -52,9 +52,9 @@ const done: ProjectProps[] = [
   {
     href: "https://github.com/PartyWumpus/bf16-compiler",
     title: "BF16 Compiler",
-    body: "rewrite of bf16 (visual brainfuck runtime) as a LLVM-based compiler",
+    body: "A rewrite of bf16 (visual brainfuck runtime) as a LLVM-based compiler",
     tags: ["rust", "llvm"],
-    date: "January 2025",
+    date: "June 2025",
   },
   {
     href: "https://github.com/PartyWumpus/BBCMicrobitBattleship",
@@ -86,15 +86,22 @@ const done: ProjectProps[] = [
   },
   {
     href: "https://github.com/PartyWumpus/logic-gate-project",
-    title: "Simple Logic Gate GUI",
-    body: "A simple logic gate system with undo/redo and component nesting. Was my A-level project.",
+    title: "A Logic Gate GUI",
+    body: "A GUI logic gate system with undo/redo and component nesting. Was my A-level project.",
     tags: ["typescript", "react"],
     date: "December 2023",
   },
   {
+    href: "https://github.com/PartyWumpus/FireflySimpleCLI",
+    title: "FireflySimpleCLI",
+    body: "A timetable CLI for firefly (a school homework / timetabling site)",
+    tags: ["python"],
+    date: "March 2023",
+  },
+  {
     href: "https://github.com/PartyWumpus/EXA-doom",
     title: "EXA Doom",
-    body: "A simple '3D' raycasting game built in Zachtronic's last call BBS",
+    body: "A '3D' raycasting game built in/for Zachtronic's 'last call BBS'",
     tags: ["javascript"],
     date: "July 2022",
   },
@@ -106,9 +113,19 @@ const done: ProjectProps[] = [
 ];
 ---
 
+<style>
+  .crossed-out {
+    text-decoration: line-through;
+  }
+</style>
 <Layout title="Projects">
+  <p>
+  The projects here are of varying sizes and took various amounts of time to work on,
+  but are generally projects I am mostly happy with. Some of the older stuff I am less happy with, but I have included anyway.
+  The rest of my personal repos can be viewed <a href="https://github.com/PartyWumpus?tab=repositories&q=&type=source">here</a>.
+  </p>
   <h2>Current Projects</h2>
   {inProgress.map((post) => <Card {...post} />)}
-  <h2>Finished Projects</h2>
+  <h2><span class="crossed-out">Abandoned</span> Finished Projects</h2>
   {done.map((post) => <Card {...post} />)}
 </Layout>

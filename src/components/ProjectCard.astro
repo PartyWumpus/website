@@ -47,7 +47,7 @@ const tagsIcons = Object.fromEntries(
               })
             : ""
         }
-      <div class="date">{date ? `Finished: ${date}` : ""}</div>
+        {date ? <span title={`(Abandoned ${date})`} class="date">{`Finished: ${date}`}</span> : null}
     </div>
   </a>
 </li>
