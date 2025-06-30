@@ -49,14 +49,14 @@ This program will:
 0. Pop and print the top stack value (`"25"`)
 0. End
 
-<video src="/befunge_example1.mp4" width="635" height="350" controls></video>
+<video src="/befunge_example1.mp4" controls></video>
 
 The thing that makes the language interesting is the `g`et and `p`ut operations that let you modify fungespace *at runtime*. This can be used for self modifying programs[^11], but is more practically useful for storage of data.
 
 This for example stores data at position 0,0 and then retrieves it again later!
 `72* 00p  00g.@`
 
-<video src="/befunge_example2.mp4" width="650" height="374" controls></video>
+<video src="/befunge_example2.mp4" controls></video>
 
 Anyways, this interested me so I made [RBeJ](https://github.com/PartyWumpus/RBeJ) (a JIT compiler for befunge), which could perhaps become it's own blog post but shortly after I finished[^1] working on it I discovered [some notes](https://www.phlamethrower.co.uk/befunge/c2b.php) about a theoretical C -> befunge93 compiler. Their compiler never actually got to do any *compiling*, and was never finished, despite being developed on and off for quite a few years. 
 
@@ -126,7 +126,7 @@ v
 > 00g1g 00g1-00p 00g1g + .
 ```
 
-<video src="/befunge_example3.mp4" width="550" height="205" controls></video>
+<video src="/befunge_example3.mp4" controls></video>
 
 So, time to whip up a quick initial design for the IR!
 Now a simple IR could just have simple operations that act on values placed on the bstack, like the example above, but that's not really how C works, so will just be leaving *even more* work for the C compiler half to do. Instead, the IR is going to have some slightly higher level operations, like "ADD, stack offset -2, stack offset -1, stack offset 0" (which would add the two values at stack positions SP-2, SP-1 and put the output in position SP+0)

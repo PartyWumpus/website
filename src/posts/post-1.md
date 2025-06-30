@@ -1,6 +1,6 @@
 ---
 title: 'My First Blog Post'
-pubDate: 2024-09-13
+pubDate: '1980-01-01' 
 description: 'This page is made automatically from a markdown file :)'
 tags: ["astro"]
 ---
