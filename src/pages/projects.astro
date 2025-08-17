@@ -19,8 +19,8 @@ const inProgress: ProjectProps[] = [
   {
     href: "https://github.com/PartyWumpus/dotfiles",
     title: "Nixos config",
-    body: "My nixos config. Includes a bar written with AGS and a neovim config written with NixCats",
-    tags: ["nix", "typescript", "lua"],
+    body: "My nixos config. Includes a bar written with quickshell and a neovim config written with NixCats",
+    tags: ["nix", "qml", "lua"],
   },
   {
     href: "https://github.com/SteamDeckHomebrew/decky-loader",
@@ -50,6 +50,13 @@ const inProgress: ProjectProps[] = [
 
 const done: ProjectProps[] = [
   {
+    href: "https://github.com/PartyWumpus/dotfiles/tree/agsv2",
+    title: "My AGS V2 bar",
+    body: "A bar written with AGS v2",
+    tags: ["typescript", "gtk"],
+    date: "April 2025", // began feb 2025
+  },
+  {
     href: "https://github.com/PartyWumpus/bf16-compiler",
     title: "BF16 Compiler",
     body: "A rewrite of bf16 (visual brainfuck runtime) as a LLVM-based compiler",
@@ -69,6 +76,13 @@ const done: ProjectProps[] = [
     body: "An optimizing JIT compiler for befunge (a popular self-modifying 2D esolang)",
     tags: ["rust", "llvm", "befunge"],
     date: "November 2024",
+  },
+  {
+    href: "https://github.com/PartyWumpus/dotfiles/tree/agsv1",
+    title: "My AGS V1 bar",
+    body: "A (rather tall) bar written with AGS",
+    tags: ["typescript", "gtk"],
+    date: "September 2024", // began june 2024
   },
   {
     href: "https://github.com/PartyWumpus/befreak-interpreter",
@@ -120,9 +134,13 @@ const done: ProjectProps[] = [
 </style>
 <Layout title="Projects">
   <p>
-  The projects here are of varying sizes and took various amounts of time to work on,
-  but are generally projects I am mostly happy with. Some of the older stuff I am less happy with, but I have included anyway.
-  The rest of my personal repos can be viewed <a href="https://github.com/PartyWumpus?tab=repositories&q=&type=source">here</a>.
+    The projects here are of varying sizes and took various amounts of time to
+    work on, but are generally projects I am mostly happy with. Some of the
+    older stuff I am less happy with, but I have included anyway. The rest of my
+    personal repos can be viewed <a
+      href="https://github.com/PartyWumpus?tab=repositories&q=&type=source"
+      >here</a
+    >.
   </p>
   <h2>Current Projects</h2>
   {inProgress.map((post) => <Card {...post} />)}

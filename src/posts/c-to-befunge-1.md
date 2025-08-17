@@ -438,7 +438,7 @@ Thanks for reading? Not entirely sure what this was, a half ramble, half "guide"
 [^2]: Certainly didn't just pirate it and then buy it later...
 [^3]: Everything is simple when you abstract the entire project away.
 [^4]: Where `00g` is 'get stack ptr' and `1g` is 'get value at `x: [previous value on bstack], y: 1`'
-[^5]: If you don't know what BNF is, as your favourite computer science graduate, I'm sure they'd love to tell you.
+[^5]: If you don't know what BNF is, ask your favourite computer science graduate, I'm sure they'd love to tell you.
 [^6]: With proper constant folding you could even get this to just `PRINT I14` but that's no fun
 [^7]: Which in this case is always 0, as function calls always enter by the entry point. Tehcnically an optimization could be done here where no number is added at all, so the befunge stack is left empty as reading the empty bstack is as if there was a zero there, but it would require certainty that no values have snuck onto the befunge stack.
 [^8]: At the time of writing, here's the current [return impl](https://github.com/PartyWumpus/C-to-befunge93/blob/7385daf354be32ba9d6698d74f3f3816425c1d57/src/builder.rs#L205) and the current [call impl](https://github.com/PartyWumpus/C-to-befunge93/blob/7385daf354be32ba9d6698d74f3f3816425c1d57/src/builder.rs#L224) but note those also include arguments in calling, and I haven't explained those yet so pretend you don't see em.
