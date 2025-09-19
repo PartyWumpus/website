@@ -8,6 +8,7 @@ export interface Props {
 }
 
 const { href, title, body, tags, date } = Astro.props;
+// needed instead of just doing `/tags/${tag}` because it's a mix of svg/png/etc
 const tagFiles = Object.keys(import.meta.glob("/public/tags/*"));
 const tagsIcons = Object.fromEntries(
   tagFiles.map((tag) => [
@@ -42,7 +43,7 @@ const tagsIcons = Object.fromEntries(
                   </div>
                   );
                 } else {
-                  return <span class="tag">{tag}</span>;
+                  throw new Error(`${tag} is not a valid tag`)
                 }
               })
             : ""

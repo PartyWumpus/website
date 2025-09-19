@@ -24,7 +24,7 @@ const description =
     <title>{title ?? "party wumpus website"}</title>
     <meta property="og:title" content={title ?? "Party Wumpus webby site :3"} />
   </head>
-  <body>
+  <body style="margin:0">
     <Navbar />
     <main>
       {title === undefined ? null : <h1 class="site-title">{title}</h1>}
