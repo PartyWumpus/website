@@ -23,7 +23,7 @@ const { data } = Astro.props;
           datetime={data.pubDate.toISOString()}
           title={data.pubDate.toString()}
         >
-          {data.pubDate.toLocaleDateString()}
+          {data.pubDate.toLocaleDateString("en-UK")}
         </time>
       </span>
     </div>
