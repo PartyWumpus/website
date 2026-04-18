@@ -1,0 +1,65 @@
+---
+export interface Props {
+  befunge: string
+  settings?: {starting_pos?: [number, number]}
+}
+
+const { befunge, settings } = Astro.props;
+---
+
+<style>
+  .parent {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .befunge {
+    display: block;
+    opacity: 0.7;
+    filter: blur(4px);
+  }
+
+  .befunge:hover {
+    opacity: 1;
+    filter: blur(3px);
+  }
+
+  .befunge:focus {
+    transition: none;
+    opacity: 1;
+    filter: none;
+  }
+
+  .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .befunge:focus + .info {
+    display: none
+  }
+
+</style>
+
+<div class="parent">
+  <canvas data-befunge={befunge} data-settings={JSON.stringify(settings ?? {})} class="befunge" style="width:100%;height:400px;"></canvas>
+  <span class="info">Press to activate</span>
+</div>
+
+<script>
+import init, { render_to_canvas } from "../../WCBE/pkg/embeded_befunge.js"
+await init();
+const canvases = document.querySelectorAll<HTMLCanvasElement>('canvas.befunge')
+canvases.forEach(canvas => {
+  let text = canvas.dataset!.befunge
+  if (text.startsWith("\n")) {
+    text = text.substring(1)
+  }
+
+  let settings = JSON.parse(canvas.dataset!.settings)
+  render_to_canvas(canvas, text, settings.starting_pos ?? [0, 0])
+})
+</script>

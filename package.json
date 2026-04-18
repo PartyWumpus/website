@@ -1,19 +1,21 @@
 {
-  "name": "temporaryy",
+  "name": "web site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "build-wasm": "./build_wcbe.sh",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "./build_wcbe.sh && astro check && astro build",
+    "build-ci": "./build_ci.sh && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.3.14",
     "@astrojs/sitemap": "^3.4.1",
     "astro": "^5.10.1",
-    "astro-typst": "^0.9.2",
     "typescript": "^5.5.4"
   }
 }

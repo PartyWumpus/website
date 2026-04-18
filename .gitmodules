@@ -1,0 +1,3 @@
+[submodule "WCBE"]
+	path = WCBE
+	url = https://github.com/PartyWumpus/WCBE

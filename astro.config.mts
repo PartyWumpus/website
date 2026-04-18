@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from "@astrojs/sitemap";
-import { typst } from "astro-typst";
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,12 +11,7 @@ export default defineConfig({
     }
   },
   integrations: [
-    typst({
-      options: {
-        remPx: 14
-      },
-      target: "html",
-    }),
+    mdx(),
     sitemap()
   ],
 });
