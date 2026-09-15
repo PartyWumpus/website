@@ -34,19 +34,21 @@ const description =
 </html>
 <style is:global>
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
+
+    --bg: 45, 48, 71;
+    --bg-2: 72, 76, 112;
+    --accent: 255, 175, 240;
+    --accent-dark: 180, 67, 109;
+
     --accent-gradient: linear-gradient(
       45deg,
       rgb(var(--accent)),
-      rgb(var(--accent-dark)) 30%,
-      #23262d 60%
+      rgb(var(--accent-dark)) 30%
     );
   }
   html {
     font-family: system-ui, sans-serif;
-    background: #13151a;
+    background: rgb(var(--bg));
     font-size: 20px;
   }
   code {
@@ -59,6 +61,12 @@ const description =
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
+  }
+  a {
+    color: rgb(var(--accent));
+  }
+  a:visited {
+    color: rgb(var(--accent-dark));
   }
   main {
     margin: auto;

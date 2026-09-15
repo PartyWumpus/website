@@ -24,7 +24,7 @@ const { href, title, body } = Astro.props;
     list-style: none;
     display: flex;
     padding: 1px;
-    background-color: #23262d;
+    background-color: rgb(var(--bg-2));
     background-image: none;
     background-size: 400%;
     border-radius: 7px;
@@ -39,12 +39,13 @@ const { href, title, body } = Astro.props;
     padding: calc(1.5rem - 1px);
     border-radius: 8px;
     color: white;
-    background-color: #23262d;
+    background-color: rgb(var(--bg-2));
     opacity: 0.8;
   }
   h2 {
     margin: 0;
     font-size: 1.25rem;
+    color: rgb(var(--accent));
     transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
   p {
@@ -56,6 +57,6 @@ const { href, title, body } = Astro.props;
     background-image: var(--accent-gradient);
   }
   .link-card:is(:hover, :focus-within) h2 {
-    color: rgb(var(--accent-light));
+    color: rgb(var(--accent-dark), 80%);
   }
 </style>

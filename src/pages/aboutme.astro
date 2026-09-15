@@ -1,42 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Icons from "../components/88by31-container.astro";
+import Footnote from "../components/Footnote.astro";
 ---
 
 <style>
   .hidden {
-    color: transparent;
-    background: white;
-  }
-
-  .hidden::selection {
-    color: transparent;
-    background-color: black;
-  }
-
-  .hidden::-moz-selection {
-    color: transparent;
-    background-color: black;
+    display: none;
   }
 </style>
 <Layout title="About Me">
   <p>
-    I'm Evie, a 19yr old trans girl from the UK. I like working in rust, and
-    tragically I have to use typescript and python often. I use nixos, my entire
-    system config can be viewed <a href="https://nix.partywump.us/">here</a>.
-    I'm a maintainer for Decky Loader (a plugin loader for steam) and am
-    currently employed at <span
-      class="hidden"
-      aria-hidden="true"
-      title="Don't really want to doxx myself too much so I'm not going to say"
-    >
-      nice try ;)
-    </span>
-    .
+    I'm Evie, a full stack<Footnote count={1}>
+      Read: backend engineer who often ends up writing lots of frontend and ops code anyways...
+    </Footnote> engineer who builds things and occasionally stuff.
+    I love working in rust, and tragically I have to use typescript and python often<Footnote count={2}>
+      Just kidding I secretly love working in these too. My real hatred is for C++ :)
+    </Footnote>.
+    I use nixos, my entire system config can be viewed <a href="https://nix.partywump.us/">here</a>.
+    I'm a maintainer for Decky Loader (a plugin loader for steam) and am currently employed.
   </p>
   <h2>Contacting me</h2>
   <ul>
     <li>Github: <a href="https://github.com/PartyWumpus">PartyWumpus</a></li>
+    <li>Email: evie <span class="hidden" aria-hidden="true">please bots don't spam my email</span> {`{at}`} <!-- prayer to remove bots --> partywump {`{dot}`} us</li>
     <li>Discord: partywampus</li>
   </ul>
   <Icons />

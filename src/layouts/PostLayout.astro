@@ -12,12 +12,6 @@ const { data } = Astro.props;
 <Layout title={data.title} description={data.description}>
   <div class="blog-post">
     <div class="metadata">
-      {
-        /*<span class="desc">
-          {data.description}
-        </span>
-        &nbsp;&nbsp;&nbsp;&nbsp;*/
-      }
       <span class="pub-date">
         <time
           datetime={data.pubDate.toISOString()}
@@ -78,6 +72,49 @@ const { data } = Astro.props;
 
     :global(.astro-code) {
       padding: 0.5em;
+    }
+
+    .footnote-popover {
+      &:not(:popover-open) {
+        all: unset;
+      }
+    }
+
+    .footnote-popover {
+      color: white;
+      border: none;
+      position-anchor: var(--my-anchor);
+      top: auto;
+      bottom: anchor(top);
+      justify-self: anchor-center;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-bottom: 9px;
+      max-width: 500px;
+      padding: 10px;
+      background: rgb(var(--bg-2));
+      border-radius: 8px;
+    }
+
+    .footnote-popover:popover-open::after {
+      position-anchor: var(--my-anchor);
+      content: "";
+      position: fixed;
+      bottom: anchor(top);
+      justify-self: anchor-center;
+      border: calc(10px) solid transparent;
+      border-bottom-width: 0;
+      border-top-color: rgb(var(--bg-2));
+      width: 0;
+      height: 0;
+      animation: popover-in 0.2s ease;
+    }
+
+    .footnote-button {
+      all: unset;
+      color: rgb(var(--accent));
+      cursor: pointer;
+      anchor-name: var(--my-anchor);
     }
   }
 </style>
