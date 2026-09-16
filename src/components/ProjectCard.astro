@@ -4,10 +4,11 @@ export interface Props {
   body: string;
   href: string;
   tags?: string[] | undefined;
-  date?: string | undefined;
+  endDate?: string | undefined;
+  startDate?: string | undefined;
 }
 
-const { href, title, body, tags, date } = Astro.props;
+const { href, title, body, tags, startDate, endDate } = Astro.props;
 // needed instead of just doing `/tags/${tag}` because it's a mix of svg/png/etc
 const tagFiles = Object.keys(import.meta.glob("/public/tags/*"));
 const tagsIcons = Object.fromEntries(
@@ -16,6 +17,19 @@ const tagsIcons = Object.fromEntries(
     tag.replace("/public", ""),
   ]),
 );
+
+let dateString: string | undefined
+if (startDate !== undefined && endDate !== undefined) {
+  if (startDate === endDate) {
+    dateString = `${startDate}`
+  } else {
+    dateString = `${startDate} - ${endDate}`
+  }
+} else if (startDate !== undefined) {
+  dateString = `${startDate} - Now`
+} else {
+  dateString = undefined
+}
 ---
 
 <li class="link-card" title={title}>
@@ -47,8 +61,10 @@ const tagsIcons = Object.fromEntries(
                 }
               })
             : ""
-        }
-        {date ? <span title={`(Abandoned ${date})`} class="date">{`Finished: ${date}`}</span> : null}
+              }
+      <span class="date">
+        {dateString}
+      </span>
     </div>
   </a>
 </li>
